@@ -1,0 +1,70 @@
+/* Alpha-ea Premium Final — refined aesthetic inspired by luxury templates */
+/* Uses Playfair Display and Inter (Google Fonts loaded in head) */
+
+:root{
+  --max:1200px;
+  --bg:#f5f8fb;
+  --surface:#ffffff;
+  --text:#08102a;
+  --muted:#6b7280;
+  --primary-1:#083b6b;
+  --primary-2:#0b79b6;
+  --accent:#caa34a;
+  --radius:14px;
+}
+
+*{box-sizing:border-box}
+body.alpha-body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto; margin:0; color:var(--text); background:var(--bg); -webkit-font-smoothing:antialiased;}
+.container{max-width:var(--max); margin:0 auto; padding:0 24px;}
+
+/* header */
+.alpha-header{position:sticky; top:0; z-index:60; backdrop-filter: blur(6px) saturate(120%); background:rgba(255,255,255,0.72); border-bottom:1px solid rgba(8,16,42,0.04);}
+.header-inner{display:flex; align-items:center; justify-content:space-between; padding:18px 0;}
+.brand{font-weight:700; display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text);}
+.brand-mark{display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; background:linear-gradient(90deg,var(--primary-1),var(--primary-2)); color:white; border-radius:12px; font-weight:700; font-family:'Playfair Display', serif;}
+
+/* nav */
+.nav{display:flex; gap:16px; align-items:center;}
+.nav a{color:var(--muted); text-decoration:none; padding:8px; font-weight:600;}
+.nav-toggle{display:none; background:none; border:none; font-size:20px;}
+
+/* hero premium */
+.hero-premium{padding:90px 0 120px; background:linear-gradient(180deg, rgba(8,59,107,0.03), rgba(11,121,182,0.02));}
+.hero-inner{display:grid; grid-template-columns:1fr 520px; gap:36px; align-items:center;}
+.hero-title{font-family:'Playfair Display', serif; font-size:44px; margin:0 0 14px; line-height:1.02; color:var(--primary-1);}
+.hero-title .large{font-size:68px; font-weight:700; display:block; letter-spacing:-1px;}
+.hero-title .italic{font-style:italic; color:var(--text);}
+.hero-sub{color:var(--muted); margin:0 0 20px; max-width:520px;}
+.hero-img{width:100%; border-radius:18px; box-shadow:0 20px 60px rgba(8,16,42,0.08); display:block;}
+
+/* about */
+.about-grid{display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:start;}
+.card{background:var(--surface); padding:18px; border-radius:12px; box-shadow:0 8px 30px rgba(8,16,42,0.04);}
+
+/* gallery */
+.gallery-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px;}
+.gallery-grid img{width:100%; height:160px; object-fit:cover; border-radius:10px; display:block;}
+
+/* services */
+.services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+.service{background:var(--surface); padding:18px; border-radius:12px; box-shadow:0 8px 30px rgba(8,16,42,0.04);}
+
+/* contact form */
+.contact-form{display:grid; grid-template-columns:1fr 1fr; gap:12px; max-width:720px; margin:14px auto 0;}
+.contact-form input, .contact-form textarea{padding:12px; border:1px solid rgba(8,16,42,0.06); border-radius:8px; font-size:14px;}
+.contact-form textarea{grid-column:1 / -1;}
+.contact-form button{grid-column:1 / -1; justify-self:start; padding:10px 18px; border-radius:10px; background:linear-gradient(90deg,var(--primary-1),var(--primary-2)); color:white; border:none; font-weight:700;}
+
+/* footer */
+.alpha-footer{padding:28px 0; background:var(--surface); border-top:1px solid rgba(8,16,42,0.04);}
+.footer-inner{display:flex; align-items:center; justify-content:space-between; gap:12px;}
+.footer-nav a{color:var(--muted); text-decoration:none; margin-left:12px;}
+
+/* buttons */
+.btn{padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none; display:inline-block;}
+.btn-primary{background:linear-gradient(90deg,var(--primary-1),var(--primary-2)); color:white; border:none;}
+.btn-outline{background:transparent; color:var(--primary-1); border:1px solid rgba(8,16,42,0.06);}
+
+/* responsive */
+@media (max-width:1024px){ .hero-inner{grid-template-columns:1fr;} .gallery-grid{grid-template-columns:repeat(2,1fr);} .about-grid{grid-template-columns:1fr;} .services-grid{grid-template-columns:1fr;} }
+@media (max-width:700px){ .nav{display:none;} .nav-toggle{display:block;} .hero-title .large{font-size:44px;} .hero-premium{padding:40px 0;} .gallery-grid{grid-template-columns:1fr;} .contact-form{grid-template-columns:1fr;} }
